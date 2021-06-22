@@ -1,24 +1,26 @@
-package test;
+package rosarioyoshida.tdd;
 
 import static org.junit.Assert.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 import java.math.BigDecimal;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import features.Calculadora;
-
-class TestCalculadora {
-
+public class TestCalculadora {
+	
+	public TestCalculadora() {
+		
+	}
+	
 	@Test
-	void newCalculadora() {
+	public void newCalculadora() {
 		Calculadora c = new Calculadora();
 		assertNotNull("Erro ao instanciar construtor default.", c);
 	}
 	
 	@Test
-	void soma() {
+	public void soma() {
 		BigDecimal a = new BigDecimal("1.111111");
 		BigDecimal b = new BigDecimal("2.222222");
 		BigDecimal result = a.add(b);
@@ -28,7 +30,7 @@ class TestCalculadora {
 	}
 	
 	@Test
-	void subtracao() {
+	public void subtracao() {
 		BigDecimal a = new BigDecimal("1.111111");
 		BigDecimal result = a.subtract(a);
 		Calculadora c = new Calculadora();

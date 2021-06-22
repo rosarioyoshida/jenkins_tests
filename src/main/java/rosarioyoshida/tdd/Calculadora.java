@@ -1,4 +1,4 @@
-package features;
+package rosarioyoshida.tdd;
 
 import java.math.BigDecimal;
 
