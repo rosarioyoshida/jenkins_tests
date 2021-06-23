@@ -1,20 +1,11 @@
 pipeline {
     agent any
 	
-	parameters {
-        gitParameter(branch: '',
-            branchFilter: 'origin/(.*)',
-            defaultValue: 'develop',
-            description: 'Selecione uma branch ou uma tag',
-            name: 'BRANCH',
-            quickFilterEnabled: true,
-            selectedValue: 'DEFAULT',
-            sortMode: 'NONE',
-            tagFilter: '*',
-            type: 'PT_BRANCH_TAG',
-            useRepository: '/jenkins_tests',
-            listSize: '1'
-        )
+	options {
+        disableConcurrentBuilds()
+        timestamps()
+        parallelsAlwaysFailFast()
+        withCredentials([string(credentialsId: "AWS-ID", variable: 'hash')])
     }
 	
     stages {
