@@ -1,12 +1,7 @@
 pipeline {
     agent any
 	
-	options {
-        disableConcurrentBuilds()
-        timestamps()
-        parallelsAlwaysFailFast()
-        withCredentials([string(credentialsId: "AWS-ID", variable: 'hash')])
-    }
+	
 	
     stages {
         stage("Checkout") {
