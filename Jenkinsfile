@@ -2,9 +2,6 @@ pipeline {
     agent any
 	
 	options {
-        disableConcurrentBuilds()
-        timestamps()
-        parallelsAlwaysFailFast()
         withCredentials([string(credentialsId: "github_rosarioyoshida", variable: 'hash')])
     }
 	
